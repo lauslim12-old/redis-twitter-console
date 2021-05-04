@@ -7,8 +7,17 @@ name = "pypi"
 redis = "*"
 
 [dev-packages]
-autopep8 = "*"
+black = "*"
 pylint = "*"
+python-dotenv = "*"
+
+[scripts]
+start = "python redis-twitter-console/main.py"
+lint = "pylint redis-twitter-console/"
+format = "black redis-twitter-console/"
 
 [requires]
 python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true
