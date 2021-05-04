@@ -8,11 +8,11 @@ This application is a port from [Redis's official guidelines](https://redis.io/t
 
 ## Database Schema
 
-Redis is not your usual database. It is a data-structure database used for caching, but with the right design, it could also be used as a conventional database. We use hashes to store data, and hashes/lists/sorted sets to store identifiers, according to Redis's guide. In this application, the notation `uid` means user-id and `tid` means the tweet ID.
+Redis is not your usual database. It is a data-structure database used for caching, but with the right design, it could also be used as a conventional database (with the additional feature of being extremely fast). We use hashes to store data, and hashes/lists/sorted sets to store identifiers, according to Redis's guide. In this application, the notation `uid` means user-id and `tid` means the tweet-id.
 
 Keys used here are as follows:
 
-- `next_user_id`, a sequence used to auto-increment `user_id`, used in `user`, `users`, and `tweet_users`.
+- `next_user_id`, a sequence used to auto-increment `user_id`, used in `user`, `users`, and `tweet_user`.
 - `next_tweet_id`, a sequence used to auto-increment `tweet_id`, used in `tweets` and `tweet_user`.
 - `users`, a hash to store all references of primary keys used to identify users (`uid`).
 - `user:{uid}`, a hash used to store the user's data. Referenced by the `users` hash.
